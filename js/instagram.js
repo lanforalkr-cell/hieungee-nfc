@@ -40,11 +40,11 @@ const InstagramFeed = (() => {
     const data = await res.json();
     return data.slice(0, config.limit).map(item => ({
       id: item.id,
-      title: item.title,
+      title: localizeField(item, 'title'),
       hangul: item.hangul,
       romanized: item.romanized,
-      example: item.example,
-      description: item.description,
+      example: localizeField(item, 'example'),
+      description: localizeField(item, 'description'),
       imageUrl: item.image,
       link: item.instagram_url,
       date: item.date,
@@ -182,10 +182,10 @@ const InstagramFeed = (() => {
           }
           <div class="phrase-card__info">
             <div class="phrase-card__day">DAY ${p.day}</div>
-            <span class="phrase-card__english">${p.english}${p.subtitle ? ` — ${p.subtitle}` : ''}</span>
+            <span class="phrase-card__english">${localizeField(p, 'english')}${localizeField(p, 'subtitle') ? ` — ${localizeField(p, 'subtitle')}` : ''}</span>
           </div>
-          <p class="phrase-card__context">${p.context}</p>
-          ${p.tip ? `<p class="phrase-card__tip">${p.tip}</p>` : ''}
+          <p class="phrase-card__context">${localizeField(p, 'context')}</p>
+          ${localizeField(p, 'tip') ? `<p class="phrase-card__tip">${localizeField(p, 'tip')}</p>` : ''}
         </a>
       `).join('');
     } catch (err) {

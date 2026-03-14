@@ -149,6 +149,29 @@ const HangulConverter = (() => {
     'taylor': '테일러', 'emma': '엠마',
     'sophia': '소피아', 'jackson': '잭슨',
     'aiden': '에이든', 'caden': '케이든',
+
+    // Common Korean surname romanizations
+    'jung': '정', 'jeong': '정', 'chung': '정',
+    'jisu': '지수', 'jisoo': '지수',
+    'kim': '김', 'lee': '이', 'park': '박', 'pak': '박',
+    'choi': '최', 'cho': '조', 'yoon': '윤', 'yun': '윤',
+    'kang': '강', 'jang': '장', 'chang': '장',
+    'shin': '신', 'lim': '임', 'han': '한',
+    'oh': '오', 'seo': '서', 'kwon': '권',
+    'hwang': '황', 'ahn': '안', 'song': '송',
+    'jeon': '전', 'hong': '홍', 'moon': '문',
+    'yang': '양', 'bae': '배', 'baek': '백',
+    'heo': '허', 'nam': '남', 'yoo': '유', 'yu': '유',
+    'noh': '노', 'roh': '노', 'ha': '하',
+    'woo': '우', 'son': '손', 'kwak': '곽',
+    'sung': '성', 'seong': '성',
+    'ji': '지', 'min': '민', 'hyun': '현', 'hyeon': '현',
+    'soo': '수', 'su': '수', 'hee': '희', 'hye': '혜',
+    'jin': '진', 'yeon': '연', 'eun': '은',
+    'won': '원', 'young': '영', 'yeong': '영',
+    'jun': '준', 'joon': '준', 'ho': '호',
+    'seok': '석', 'suk': '숙', 'dong': '동',
+    'hoon': '훈', 'hun': '훈',
   };
 
   // ===== Syllable-based algorithmic fallback =====
