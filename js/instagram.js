@@ -35,7 +35,7 @@ const InstagramFeed = (() => {
    * Fetch lessons from local JSON
    */
   async function fetchJSON() {
-    const res = await fetch(config.jsonPath);
+    const res = await fetch(config.jsonPath, { cache: 'no-store' });
     if (!res.ok) throw new Error(`Failed to load ${config.jsonPath}`);
     const data = await res.json();
     return data.slice(0, config.limit).map(item => ({
@@ -158,7 +158,7 @@ const InstagramFeed = (() => {
    */
   async function loadPhrases() {
     try {
-      const res = await fetch('data/phrases.json');
+      const res = await fetch('data/phrases.json', { cache: 'no-store' });
       if (!res.ok) throw new Error('Failed to load phrases');
       const phrases = await res.json();
       const container = document.getElementById('phraseList');

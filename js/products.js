@@ -12,7 +12,7 @@ const ProductShop = (() => {
   let allProducts = [];
 
   async function fetchProducts() {
-    const res = await fetch(config.jsonPath);
+    const res = await fetch(config.jsonPath, { cache: 'no-store' });
     if (!res.ok) throw new Error(`Failed to load ${config.jsonPath}`);
     return res.json();
   }
