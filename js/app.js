@@ -182,29 +182,57 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== Newsletter =====
+  const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec';
+
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
+    newsletterForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const emailInput = document.getElementById('newsletterEmail');
+      const btn = newsletterForm.querySelector('.newsletter__btn');
+      const note = document.getElementById('newsletterNote');
       const email = emailInput.value.trim();
       if (!email) return;
 
-      // Store locally (replace with real API later)
-      const subs = JSON.parse(localStorage.getItem('lanforal_subscribers') || '[]');
-      if (!subs.includes(email)) {
-        subs.push(email);
-        localStorage.setItem('lanforal_subscribers', JSON.stringify(subs));
-      }
+      btn.disabled = true;
+      btn.textContent = '...';
 
-      const btn = newsletterForm.querySelector('.newsletter__btn');
-      btn.textContent = t('newsletter.success.btn');
-      btn.classList.add('success');
-      const note = document.getElementById('newsletterNote');
-      note.textContent = t('newsletter.success.note');
-      note.style.opacity = '1';
-      note.style.color = 'var(--gold)';
-      emailInput.disabled = true;
+      try {
+        // Send to Google Sheets
+        if (!GOOGLE_SHEET_URL.includes('YOUR_SCRIPT_ID_HERE')) {
+          await fetch(GOOGLE_SHEET_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email,
+              lang: I18n.getLang(),
+              timestamp: new Date().toISOString(),
+              source: 'nfc-landing',
+            }),
+          });
+        }
+
+        // Also store locally as backup
+        const subs = JSON.parse(localStorage.getItem('lanforal_subscribers') || '[]');
+        if (!subs.includes(email)) {
+          subs.push(email);
+          localStorage.setItem('lanforal_subscribers', JSON.stringify(subs));
+        }
+
+        btn.textContent = t('newsletter.success.btn');
+        btn.classList.add('success');
+        note.textContent = t('newsletter.success.note');
+        note.style.opacity = '1';
+        note.style.color = 'var(--gold)';
+        emailInput.disabled = true;
+      } catch {
+        btn.textContent = t('newsletter.btn');
+        btn.disabled = false;
+        note.textContent = 'Please try again.';
+        note.style.opacity = '1';
+        note.style.color = 'var(--crimson)';
+      }
     });
   }
 
