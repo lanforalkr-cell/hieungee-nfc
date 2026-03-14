@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== Newsletter =====
-  const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec';
+  const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxCQNUyetKzAc_EuJg0dutMeeOCJCgh13wVw6iFy7K7a9eGBxeFNT96EOb-USD-4PlF/exec';
 
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
