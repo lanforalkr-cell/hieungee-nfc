@@ -1,0 +1,44 @@
+/* ===================================================================
+   Korean Traditional Pattern System — "Royal Night Scroll"
+   Hand-crafted SVG patterns: clouds (구름문), lotus (연꽃문),
+   bossanghwa (보상화문), diamond lattice (마름모 격자)
+   =================================================================== */
+
+.pattern-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ---- Cloud motif (구름문) ---- */
+.pattern-clouds {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='180' viewBox='0 0 260 180'%3E%3Cdefs%3E%3ClinearGradient id='cg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23d4a853'/%3E%3Cstop offset='100%25' stop-color='%23a07830'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none' stroke='url(%23cg)' stroke-width='0.6' opacity='0.09'%3E%3Cpath d='M40 90 C40 70 55 55 75 55 C80 55 85 57 89 60 C93 50 103 43 115 43 C130 43 142 55 142 70 C142 72 142 74 141 76 C148 78 153 84 153 92 C153 102 145 110 135 110 L65 110 C50 110 40 100 40 90Z'/%3E%3Cpath d='M60 95 C60 95 70 80 90 80 C100 80 105 88 105 88' stroke-width='0.35'/%3E%3Cpath d='M110 85 Q120 75 135 82' stroke-width='0.35'/%3E%3Ccircle cx='200' cy='40' r='18' stroke-width='0.3'/%3E%3Ccircle cx='200' cy='40' r='12' stroke-width='0.25'/%3E%3Ccircle cx='200' cy='40' r='5' stroke-width='0.2'/%3E%3Cpath d='M20 150 Q30 135 50 140 Q55 130 70 132 Q80 125 92 135 Q95 140 90 148 L30 148 Q20 148 20 150Z' stroke-width='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 260px 180px;
+  animation: patternDrift 50s linear infinite;
+}
+
+/* ---- Lotus / Bossanghwa (연꽃 · 보상화문) ---- */
+.pattern-lotus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke='%23943333' stroke-width='0.5' opacity='0.06' transform='translate(110,110)'%3E%3Ccircle r='40'/%3E%3Ccircle r='28' stroke-dasharray='4 6'/%3E%3Ccircle r='12'/%3E%3Cpath d='M0-45 C12-30 12-10 0 5 C-12-10-12-30 0-45Z'/%3E%3Cpath d='M0-45 C12-30 12-10 0 5 C-12-10-12-30 0-45Z' transform='rotate(45)'/%3E%3Cpath d='M0-45 C12-30 12-10 0 5 C-12-10-12-30 0-45Z' transform='rotate(90)'/%3E%3Cpath d='M0-45 C12-30 12-10 0 5 C-12-10-12-30 0-45Z' transform='rotate(135)'/%3E%3Cpath d='M0-45 C12-30 12-10 0 5 C-12-10-12-30 0-45Z' transform='rotate(180)'/%3E%3Cpath d='M0-45 C12-30 12-10 0 5 C-12-10-12-30 0-45Z' transform='rotate(225)'/%3E%3Cpath d='M0-45 C12-30 12-10 0 5 C-12-10-12-30 0-45Z' transform='rotate(270)'/%3E%3Cpath d='M0-45 C12-30 12-10 0 5 C-12-10-12-30 0-45Z' transform='rotate(315)'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d4a853' stroke-width='0.3' opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3Ccircle cx='190' cy='30' r='10'/%3E%3Ccircle cx='30' cy='190' r='10'/%3E%3Ccircle cx='190' cy='190' r='10'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  animation: patternDrift 65s linear infinite reverse;
+}
+
+/* ---- Diamond lattice (마름모 격자) for hangul section ---- */
+.pattern-diamond {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23c9974a' stroke-width='0.35' opacity='0.06'%3E%3Cpath d='M50 0L100 50 50 100 0 50Z'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3Ccircle cx='50' cy='50' r='3' fill='%23c9974a' fill-opacity='0.08' stroke='none'/%3E%3Cpath d='M50 20L80 50 50 80 20 50Z' stroke-dasharray='3 5'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 100px 100px;
+}
+
+/* ---- Minimal grid for footer ---- */
+.pattern-grid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23c9974a' stroke-width='0.2' opacity='0.04'%3E%3Cpath d='M30 0v60M0 30h60'/%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+/* ---- Slow drift animation ---- */
+@keyframes patternDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 520px 360px; }
+}

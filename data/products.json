@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name_en": "Hee-eung-ee Keyring — Sejong",
+    "name_kr": "히응이 키링_세종대왕",
+    "category": "Fashion",
+    "price": 25.00,
+    "currency": "USD",
+    "image": "image/shop/shop_세종대왕.png",
+    "url": "https://www.lanforal.com/product/Sejong",
+    "badge": "Best"
+  },
+  {
+    "id": 2,
+    "name_en": "Hee-eung-ee Keyring — Lucky Pouch",
+    "name_kr": "히응이 키링_복주머니",
+    "category": "Fashion",
+    "price": 25.00,
+    "currency": "USD",
+    "image": "image/shop/shop_복주머니.png",
+    "url": "https://www.lanforal.com/product/lucky"
+  },
+  {
+    "id": 3,
+    "name_en": "Hee-eung-ee Keyring — Tteokbokki",
+    "name_kr": "히응이 키링_떡볶이",
+    "category": "Fashion",
+    "price": 25.00,
+    "currency": "USD",
+    "image": "image/shop/shop_떡볶이.png",
+    "url": "https://www.lanforal.com/product/Teokbokgi"
+  },
+  {
+    "id": 4,
+    "name_en": "Hee-eung-ee Keyring — Gratitude",
+    "name_kr": "히응이 키링_고마움",
+    "category": "Fashion",
+    "price": 25.00,
+    "currency": "USD",
+    "image": "image/shop/shop_고마움.png",
+    "url": "https://www.lanforal.com/product/gratitudeheeeungeeplush-386",
+    "badge": "New"
+  }
+]

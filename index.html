@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0c0608">
+  <meta name="description" content="Hee-eung-ee NFC Landing - Discover your Korean name and explore K-culture with Lanforal">
+  <title>Hee-eung-ee | Lanforal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+  <link rel="stylesheet" href="css/patterns.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Language Selector -->
+  <nav class="lang-selector" id="langSelector">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ko">한</button>
+    <button class="lang-btn" data-lang="ja">日</button>
+    <button class="lang-btn" data-lang="zh">中</button>
+  </nav>
+
+  <!-- Floating gold particles -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ===== SECTION 1: Hero Welcome ===== -->
+  <section id="hero" class="section hero">
+    <div class="hero-bg-layers">
+      <div class="hero-radial"></div>
+      <div class="pattern-overlay pattern-clouds"></div>
+      <div class="pattern-overlay pattern-lotus"></div>
+      <div class="hero-vignette"></div>
+    </div>
+
+    <div class="hero-content">
+      <!-- Decorative top ornament -->
+      <div class="ornament-top">
+        <svg viewBox="0 0 200 24" class="ornament-svg">
+          <path d="M0 12h70q10 0 10-10t10 10 10-10 10 10q0 0 10 0h70" fill="none" stroke="currentColor" stroke-width="0.8"/>
+          <circle cx="100" cy="6" r="3" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <div class="hero-stage">
+        <div class="stage-ring stage-ring--outer"></div>
+        <div class="stage-ring stage-ring--inner"></div>
+        <div class="stage-glow"></div>
+        <div class="hero-character">
+          <img src="assets/hieungee.png" alt="Hee-eung-ee" class="hero-img" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><circle cx=%22100%22 cy=%22100%22 r=%2280%22 fill=%22%23d4a853%22/><text x=%22100%22 y=%22120%22 text-anchor=%22middle%22 font-size=%2270%22 fill=%22%230a0a0c%22>ㅎ</text></svg>'">
+        </div>
+      </div>
+
+      <p class="hero-greeting" data-animate data-i18n="hero.greeting">안녕하세요!</p>
+      <h1 class="hero-title" data-animate data-i18n="hero.title">Hello, I'm <span class="text-gold">Hee-eung-ee</span></h1>
+      <p class="hero-subtitle" data-animate data-i18n="hero.subtitle">I'm a traveler from the Star of Hearts ✦<br>I collect emotions and share the beauty of Korea with everyone.</p>
+
+      <div class="scroll-cue" data-animate>
+        <span class="scroll-cue__label" data-i18n="hero.scroll">Discover your Korean name</span>
+        <div class="scroll-cue__line"></div>
+        <svg class="scroll-cue__arrow" width="16" height="24" viewBox="0 0 16 24">
+          <path d="M8 0v20M1 14l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Decorative Section Divider ===== -->
+  <div class="section-divider">
+    <svg viewBox="0 0 400 32" preserveAspectRatio="none">
+      <path d="M0 16 Q50 0 100 16 T200 16 T300 16 T400 16" fill="none" stroke="url(#goldGrad)" stroke-width="0.6"/>
+      <defs><linearGradient id="goldGrad"><stop offset="0%" stop-color="transparent"/><stop offset="50%" stop-color="#c9974a"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+    </svg>
+  </div>
+
+  <!-- ===== SECTION 2: Hangul Name Artwork ===== -->
+  <section id="hangul-name" class="section hangul-section">
+    <div class="hero-bg-layers">
+      <div class="hangul-radial"></div>
+      <div class="pattern-overlay pattern-diamond"></div>
+      <div class="hero-vignette"></div>
+    </div>
+
+    <div class="section-content">
+      <div class="ornament-top ornament-top--sm">
+        <svg viewBox="0 0 120 16" class="ornament-svg">
+          <circle cx="40" cy="8" r="2" fill="currentColor"/>
+          <line x1="46" y1="8" x2="74" y2="8" stroke="currentColor" stroke-width="0.5"/>
+          <circle cx="60" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="0.6"/>
+          <circle cx="80" cy="8" r="2" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <h2 class="section-title" data-animate data-i18n="name.title">Your Name in <span class="text-gold text-kr">한글</span></h2>
+      <p class="section-desc" data-animate data-i18n="name.desc">Type your name and receive a beautiful Korean calligraphy artwork</p>
+
+      <div class="name-input-group" data-animate>
+        <input type="text" id="nameInput" class="name-input" data-i18n-placeholder="name.placeholder" placeholder="Enter your name" maxlength="20" autocomplete="off">
+        <button id="convertBtn" class="btn-convert">
+          <span data-i18n="name.convert">Create Artwork</span>
+        </button>
+      </div>
+
+      <div id="resultArea" class="result-area hidden">
+        <div class="artwork-frame">
+          <canvas id="artworkCanvas" width="1080" height="1080"></canvas>
+          <div class="artwork-preview" id="artworkPreview"></div>
+        </div>
+        <div class="result-names">
+          <span class="result-hangul" id="resultHangul"></span>
+          <span class="result-english" id="resultEnglish"></span>
+        </div>
+        <div class="share-buttons">
+          <button id="downloadBtn" class="btn-share btn-download">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="name.save">Save Image</span>
+          </button>
+          <button id="shareBtn" class="btn-share btn-sns">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="name.share">Share</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: Hangul Lessons Feed ===== -->
+  <section id="hangul-feed" class="section feed-section">
+    <div class="hero-bg-layers">
+      <div class="feed-radial"></div>
+      <div class="pattern-overlay pattern-diamond"></div>
+      <div class="hero-vignette"></div>
+    </div>
+    <div class="section-content section-content--wide">
+      <div class="feed-header" data-animate>
+        <div class="feed-header__icon">ㅎ</div>
+        <div class="feed-header__text">
+          <h2 class="feed-header__title" data-i18n="feed.title">Learn Hangul with <span class="text-gold">Hee-eung-ee</span></h2>
+          <p class="feed-header__sub" data-i18n="feed.sub">히응이의 한글 교실</p>
+        </div>
+      </div>
+      <div class="lesson-tabs" data-animate>
+        <button class="lesson-tab active" data-tab="consonants" data-i18n="feed.tab.consonants">Consonants</button>
+        <button class="lesson-tab" data-tab="phrases" data-i18n="feed.tab.phrases">Daily Phrases</button>
+      </div>
+      <div class="lesson-panel active" id="panel-consonants">
+        <div class="feed-grid" id="feedGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <div class="lesson-panel" id="panel-phrases">
+        <div class="phrase-list" id="phraseList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <a href="https://www.instagram.com/lanforal_official/" target="_blank" rel="noopener" class="feed-cta" data-animate>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+        <span data-i18n="feed.follow">Follow for more lessons</span>
+      </a>
+
+      <!-- Newsletter signup -->
+      <div class="newsletter" data-animate>
+        <div class="newsletter__header">
+          <h3 class="newsletter__title" data-i18n="newsletter.title">Want to learn more Korean?</h3>
+          <p class="newsletter__desc" data-i18n="newsletter.desc">Get weekly Hangul lessons & exclusive deals from Hee-eung-ee directly to your inbox!</p>
+        </div>
+        <form class="newsletter__form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" class="newsletter__input" data-i18n-placeholder="newsletter.placeholder" placeholder="your@email.com" required autocomplete="email">
+          <button type="submit" class="newsletter__btn" data-i18n="newsletter.btn">Subscribe</button>
+        </form>
+        <p class="newsletter__note" id="newsletterNote" data-i18n="newsletter.note">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: Coupons & Promotions ===== -->
+  <section id="coupons" class="section coupon-section">
+    <div class="hero-bg-layers">
+      <div class="coupon-radial"></div>
+      <div class="pattern-overlay pattern-diamond"></div>
+      <div class="hero-vignette"></div>
+    </div>
+    <div class="section-content section-content--wide">
+      <h2 class="section-title" data-animate data-i18n="coupons.title">Special <span class="text-gold">Offers</span></h2>
+      <p class="section-desc" data-animate data-i18n="coupons.desc">Exclusive deals for NFC visitors</p>
+      <div class="coupon-list" id="couponList" data-animate>
+        <!-- Populated by JS -->
+      </div>
+      <a href="https://lanforal.com" target="_blank" rel="noopener" class="feed-cta" data-animate>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 3h18v18H3V3z" stroke="currentColor" stroke-width="1.5"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18" stroke="currentColor" stroke-width="0.5" opacity="0.3"/></svg>
+        <span data-i18n="coupons.shop">Visit Lanforal Shop</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5: Product Shop ===== -->
+  <section id="products" class="section product-section">
+    <div class="hero-bg-layers">
+      <div class="product-radial"></div>
+      <div class="pattern-overlay pattern-clouds"></div>
+      <div class="hero-vignette"></div>
+    </div>
+    <div class="section-content section-content--wide">
+      <h2 class="section-title" data-animate data-i18n="products.title">Shop <span class="text-gold">Lanforal</span></h2>
+      <p class="section-desc" data-animate data-i18n="products.desc">Korean culture, beautifully designed</p>
+      <div class="product-grid" id="productGrid" data-animate>
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="pattern-overlay pattern-grid"></div>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="footer-brand__en">Lanforal</span>
+        <span class="footer-brand__kr">훈민정화</span>
+      </div>
+      <p class="footer-slogan" data-i18n="footer.slogan">Connecting All Languages of Korea and Hearts</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/lanforal_official/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <span class="footer-dot"></span>
+        <a href="https://www.tiktok.com/@lanforal" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
+        <span class="footer-dot"></span>
+        <a href="https://lanforal.com" target="_blank" rel="noopener" aria-label="Shop">Shop</a>
+        <span class="footer-dot"></span>
+        <a href="https://amazon.com" target="_blank" rel="noopener" aria-label="Amazon">Amazon</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copy">&copy; 2025 Lanforal. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/gemini.js"></script>
+  <script src="js/character-svg.js"></script>
+  <script src="js/hangul.js"></script>
+  <script src="js/artwork.js"></script>
+  <script src="js/instagram.js"></script>
+  <script src="js/coupons.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

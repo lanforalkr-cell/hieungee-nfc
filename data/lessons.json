@@ -1,0 +1,68 @@
+[
+  {
+    "id": "lesson-01",
+    "title": "ㄱ is for Gimbap!",
+    "hangul": "ㄱ",
+    "romanized": "g / k",
+    "example": "김밥 (Gimbap)",
+    "description": "The first consonant of Hangul! It sounds like 'g' at the start of a word.",
+    "image": "image/인형기역.png",
+    "instagram_url": "https://www.instagram.com/lanforal_official/",
+    "date": "2025-03-01"
+  },
+  {
+    "id": "lesson-02",
+    "title": "ㄴ is for Naengmyeon!",
+    "hangul": "ㄴ",
+    "romanized": "n",
+    "example": "냉면 (Naengmyeon)",
+    "description": "A soft 'n' sound, just like in English. Easy to remember!",
+    "image": "image/인형니은.png",
+    "instagram_url": "https://www.instagram.com/lanforal_official/",
+    "date": "2025-03-05"
+  },
+  {
+    "id": "lesson-03",
+    "title": "ㄷ is for Dakgalbi!",
+    "hangul": "ㄷ",
+    "romanized": "d / t",
+    "example": "닭갈비 (Dakgalbi)",
+    "description": "Sounds like 'd' at the beginning. Try saying it with a yummy dish!",
+    "image": "image/인형디귿.png",
+    "instagram_url": "https://www.instagram.com/lanforal_official/",
+    "date": "2025-03-10"
+  },
+  {
+    "id": "lesson-04",
+    "title": "ㄹ is for Ramyeon!",
+    "hangul": "ㄹ",
+    "romanized": "r / l",
+    "example": "라면 (Ramyeon)",
+    "description": "A unique Korean sound — between 'r' and 'l'. Practice with ramen!",
+    "image": "image/인형리을.png",
+    "instagram_url": "https://www.instagram.com/lanforal_official/",
+    "date": "2025-03-14"
+  },
+  {
+    "id": "lesson-05",
+    "title": "ㅁ is for Mandu!",
+    "hangul": "ㅁ",
+    "romanized": "m",
+    "example": "만두 (Mandu)",
+    "description": "The shape of ㅁ looks like a box — imagine a dumpling box!",
+    "image": "image/인형미음.png",
+    "instagram_url": "https://www.instagram.com/lanforal_official/",
+    "date": "2025-03-18"
+  },
+  {
+    "id": "lesson-06",
+    "title": "ㅂ is for Bibimbap!",
+    "hangul": "ㅂ",
+    "romanized": "b / p",
+    "example": "비빔밥 (Bibimbap)",
+    "description": "Sounds like 'b' — and what better way to learn than with Korea's iconic dish!",
+    "image": "image/인형비읍.png",
+    "instagram_url": "https://www.instagram.com/lanforal_official/",
+    "date": "2025-03-22"
+  }
+]

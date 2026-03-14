@@ -1,0 +1,58 @@
+[
+  {
+    "id": "day-01",
+    "day": 1,
+    "korean": "감사합니다 / 고마워요",
+    "romanized": "gamsahamnida / gomawoyo",
+    "english": "Thank you in Korean",
+    "subtitle": "What's the difference?",
+    "context": "Gamsahamnida is more formal and polite, while gomawoyo is softer and friendlier. Use gamsahamnida at shops, and gomawoyo with close friends.",
+    "tip": "A small greeting can make your trip so much warmer. Save this and try it today!",
+    "character": "image/인형이응.png",
+    "webtoon": "image/webtoon/day01_thankyou.png",
+    "emoji": "🙇",
+    "instagram_url": "https://www.instagram.com/lanforal_official/"
+  },
+  {
+    "id": "day-02",
+    "day": 2,
+    "korean": "안녕하세요",
+    "romanized": "annyeonghaseyo",
+    "english": "Hello",
+    "subtitle": "The universal Korean greeting",
+    "context": "This all-purpose greeting works morning, noon, and night. Whether meeting someone new or entering a shop, this one word is all you need.",
+    "tip": "A slight bow while saying it makes it even better!",
+    "character": "image/인형기역.png",
+    "webtoon": "image/webtoon/day02_hello.png",
+    "emoji": "👋",
+    "instagram_url": "https://www.instagram.com/lanforal_official/"
+  },
+  {
+    "id": "day-03",
+    "day": 3,
+    "korean": "맛있어요!",
+    "romanized": "masisseoyo!",
+    "english": "It's delicious!",
+    "subtitle": "The magic word at any restaurant",
+    "context": "Say this after eating Korean food and the owner will love it! Put your heart into it.",
+    "tip": "Point at the food with a thumbs up for extra effect!",
+    "character": "image/chracter/인형리을.png",
+    "webtoon": "image/webtoon/day03_delicious.png",
+    "emoji": "😋",
+    "instagram_url": "https://www.instagram.com/lanforal_official/"
+  },
+  {
+    "id": "day-04",
+    "day": 4,
+    "korean": "얼마예요?",
+    "romanized": "eolmayeyo?",
+    "english": "How much is it?",
+    "subtitle": "Essential for shopping",
+    "context": "An essential phrase when shopping at markets or street stalls. Just hold up the item and ask!",
+    "tip": "A calculator gesture works too!",
+    "character": "image/인형미음.png",
+    "webtoon": "image/webtoon/day04_howmuch.png",
+    "emoji": "🛒",
+    "instagram_url": "https://www.instagram.com/lanforal_official/"
+  }
+]
