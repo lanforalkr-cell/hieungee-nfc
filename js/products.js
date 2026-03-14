@@ -26,31 +26,34 @@ const ProductShop = (() => {
       return;
     }
 
-    grid.innerHTML = products.map(p => `
+    grid.innerHTML = products.map(p => {
+      const name = localizeField(p, 'name');
+      const nameKo = p.name_ko || p.name;
+      return `
       <a href="${p.url}" target="_blank" rel="noopener" class="product-card" data-category="${p.category}">
         <div class="product-card__img">
           ${p.badge ? `<span class="product-card__badge">${p.badge}</span>` : ''}
           ${p.image
-            ? `<img src="${p.image}" alt="${p.name_en}" loading="lazy"
+            ? `<img src="${p.image}" alt="${name}" loading="lazy"
                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="product-card__placeholder" style="display:none">
-                <span class="product-card__icon">${p.name_kr.charAt(0)}</span>
+                <span class="product-card__icon">${nameKo.charAt(0)}</span>
               </div>`
             : `<div class="product-card__placeholder">
-                <span class="product-card__icon">${p.name_kr.charAt(0)}</span>
+                <span class="product-card__icon">${nameKo.charAt(0)}</span>
               </div>`
           }
         </div>
         <div class="product-card__body">
-          <h3 class="product-card__name">${p.name_en}</h3>
-          <p class="product-card__name-kr">${p.name_kr}</p>
+          <h3 class="product-card__name">${name}</h3>
+          <p class="product-card__name-kr">${nameKo}</p>
           <div class="product-card__bottom">
             <span class="product-card__price">$${p.price.toFixed(2)}</span>
             <span class="product-card__shop">${t('products.shopnow')}</span>
           </div>
         </div>
       </a>
-    `).join('');
+    `;}).join('');
   }
 
   function setupFilters() {
